@@ -1,0 +1,3 @@
+Final
+Snooze alarm/store per their request or Store for 3 hours, from the time you receive confirmation the technician is onsite via HoneyBee, a TM onsite, or the vendor/technician themselves.
+If verifying via HoneyBee: Snooze for three hours from the technicians check-in time.

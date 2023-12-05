@@ -1,0 +1,4 @@
+- -What type of Case Alarm?
+- -Select best option
+High Temperature
+Low Temperature

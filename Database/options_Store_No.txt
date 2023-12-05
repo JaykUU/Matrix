@@ -1,0 +1,5 @@
+Final
+Snooze one hour and tell store to call FMOC when power restores
+
+Note: Tell store to follow the Temp it Right Guide, and the Alert One Flip Chart procedures until power is restored.
+Note: Tell store to subit event on myDevice via the Critical Emergency Event app.

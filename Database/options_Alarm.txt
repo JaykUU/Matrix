@@ -1,0 +1,18 @@
+- -Use this drop down only for alarms that are being caused by assets that are waiting for materials.
+-h2Note: This part of the snooze matrix should only be used if service is being sent or has already been sent.
+- -What Type of alarm?
+Rack Fail including High/Low Suction, Discharge and Phase Loss Alarms
+Leak Detection System (LDS, IRLDS, RLDS, MRLDS) Alarms
+Liquid Level
+DAFN (Device Absent From Network)
+FSBW (Failed Sensor Bad Wireing)
+Oil (Rack/ Oil Fail Logic in 1/ Oil Differential Command Out Alarms)
+Case Temperature
+E2 /Einstein offline
+Fresh Pet Cooler
+ISO ISS (Input Sensor Open/ Input Sensor Short)
+Ruptured Disk
+High/Low Bypass
+Vac Pump
+Door Open Alarm
+All Other Alarms

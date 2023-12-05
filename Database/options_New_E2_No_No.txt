@@ -1,0 +1,4 @@
+- -Is this regular hours or after hours/ holiday?
+-h2Note: Regular hours are 6AM - 4PM Monday - Friday.
+Regular hours
+After hours

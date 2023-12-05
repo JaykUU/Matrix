@@ -1,0 +1,10 @@
+Final
+CM: Snooze for 24 hours
+Note: If Snooze expires outside of business hours, set snooze to expire at 10 AM the following business day
+
+Immediate EM: Snooze alarm for 3 hours
+
+AM EM Service - 6 p.m. through 6 a.m. Store Time: Snooze alarm for 3 hours
+Note: We need to monitor the issue every 3 hours overnight to ensure service does not need to be escalated.
+
+AM EM Service - Store closed and unable to reach a responder: Snooze until Store Flow Time

@@ -1,0 +1,19 @@
+- -If you have multiple alarms including any Rack issues, select reack fail. 
+- -If you have multiple alarms but not rack issues, you will need to follow a separate snoozed process for each alarm/alarm type.
+- -If your single alarm matches multiple drop down options, pick the one highest on the list.
+- -What Type of alarm?
+Rack Fail including High/Low Suction, Discharge and Phase Loss Alarms
+Leak Detection System (LDS, IRLDS, RLDS, MRLDS) Alarms
+Liquid Level
+DAFN (Device Absent From Network)
+FSBW (Failed Sensor Bad Wireing)
+Oil (Rack/ Oil Fail Logic in 1/ Oil Differential Command Out Alarms)
+Case Temperature
+E2 /Einstein Offline
+Fresh Pet Cooler
+ISO ISS (Input Sensor Open/ Input Sensor Short)
+Ruptured Disk
+High/Low Bypass
+Vac Pump
+Door Open Alarm
+All Other Alarms

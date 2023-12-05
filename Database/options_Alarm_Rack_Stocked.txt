@@ -1,0 +1,8 @@
+Final
+CM: DO NOT SNOOZE!
+
+Note: FMOC needs to continue to monitor the situation so that the service can be escalated to EM if needed.
+
+EM: Snooze STORE for 3 Hours
+
+AM EM Service - Store closed and unable to reach a responder: Snooze Store until Store Flow Time

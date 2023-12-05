@@ -1,0 +1,6 @@
+Final
+Immediate EM: Snooze alarm for 3 hours
+
+AM EM Service - 6 p.m. through 6 a.m. Store Time: Snooze alarm until 9 am Store Time
+
+AM EM Service - Store closed and unable to reach a responder: Snooze until Store Flow Time

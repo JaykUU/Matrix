@@ -1,0 +1,10 @@
+Final
+CM: Snooze for 24 Hours
+Note: if Snooze expires outside of business hours, set snooze to expire at 10 AM the following business day.
+
+EM: Snooze for 3 hours
+If the case in alarm has multiple temperature zones and ALL zones are alarming or the current temps/trends suggests ALL zones will be alarming within the next 3 hours: Snooze the entire case for 3 hours from the Proactive tab in Alarm Management.
+
+AM EM Service - 6 p.m. through 6 a.m. Store Time: Snooze until 9 a.m. store times
+
+AM EM Service - Store closed and unable to reach a responder: Snooze until 1 hour before Store Flow Time

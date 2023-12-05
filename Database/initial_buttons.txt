@@ -1,0 +1,6 @@
+- -Which option best describes the situation?
+New or Repeat Alarm Waiting for Service (including times tech has been Redispatched as EM)
+Alarm with an open WO that is Waiting on Materials (WMATL) or Pending a Proposal
+Technician on Site (check-ins, check-outs, or as advised by store TM)
+Store experiencing a Power Outage
+Snooze FAQ How-tos and whatnot

@@ -1,0 +1,5 @@
+- -What type of alarm?
+-h2Note: If you do not see yur alarm listed, please submit feedback with alarm type and the store number you came across the alarm at.
+- -Select best option
+Temperature High/Low Alarm
+ISO / ISS (Input Sensor Alarm)

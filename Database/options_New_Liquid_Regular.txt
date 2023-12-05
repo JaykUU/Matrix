@@ -1,0 +1,4 @@
+Final
+EM: Snooze alarm for 3 hours
+
+Note: Snooze store if multiple case temperatures are inpacted.

@@ -1,0 +1,4 @@
+- -Use drop down to specify if the alarm was during Regular hours or After hours?
+- -Is this regular hours or After hours?
+Regular Hours
+After Hours

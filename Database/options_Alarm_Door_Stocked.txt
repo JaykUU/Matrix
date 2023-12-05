@@ -1,0 +1,8 @@
+Final
+CM: Snooze for 72 Hours
+Note: If Snooze expires outside of business hours, set snooze to expire at 10 AM the following business day.
+
+EM: Snooze for 3 hours
+
+AM EM Service - Store closed and unable to reach a responder: Snooze until 1 hours before Store Flow Time
+Warning: If there is no indication that affected cases are being self-monitored or have been demerched, notify the store to self-monitor before snoozing.

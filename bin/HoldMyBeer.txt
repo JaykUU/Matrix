@@ -1,0 +1,132 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class DynamicButtonApp {
+    private JFrame frame;
+    private JPanel panel;
+    private GridBagConstraints position;
+    private List<JButton> buttons;
+    private List<Component> components;
+    private int currentChoice = 1; // Track the current choice level
+    private final String PATH = System.getProperty("user.dir");
+    private String path;
+
+    public DynamicButtonApp() {
+        path = "";
+        frame = new JFrame("Dynamic Button App");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        buttons = new ArrayList<>();
+        components = new ArrayList<>();
+        position = new GridBagConstraints();
+
+        loadButtonsFromFile(String.format("%s\\Database\\initial_buttons.txt", PATH)); // Load initial buttons
+        addVerticalSpacing(30);
+        frame.add(panel);
+
+        frame.setVisible(true);
+    }
+
+    // Load buttons from a file and add them to the panel
+    private void loadButtonsFromFile(String filename) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+                if (line.equals("Final")) {
+                    System.out.println("enter if");
+                    displayMessage(filename);
+                    break;
+                }
+                else if (line.startsWith("- -")) {
+                    // Process as text with a note
+                    JTextArea textArea = new JTextArea(4, 40);
+                    textArea.setWrapStyleWord(true);
+                    textArea.setLineWrap(true);
+                    textArea.setText(line.substring(4).trim());
+                    textArea.setEditable(false);
+                    components.add(textArea);
+                }
+                else {
+                    JButton button = new JButton(line);
+                    button.addActionListener(new ButtonClickListener());
+                    buttons.add(button);
+                    panel.add(button);
+                }
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Method to add bertical spacing between buttons
+    private void addVerticalSpacing(int pixels) {
+        Component spacer = Box.createVerticalStrut(pixels);
+        panel.add(spacer);
+    }
+
+    // ActionListener for the buttons
+    private class ButtonClickListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (currentChoice <= 3) { // Limit the number of choices
+                JButton sourceButton = (JButton) e.getSource();
+                String[] arrOfStrs = sourceButton.getText().split(" ");
+                path = path + "_" + arrOfStrs[0];
+                String optionFilename = PATH + "\\Database\\options" + path + ".txt";
+                panel.removeAll(); // Remove existing buttons
+
+                loadButtonsFromFile(optionFilename); // Load options buttons
+                currentChoice++;
+
+                if (currentChoice == 4) {
+                    // Display a final message
+                    JOptionPane.showMessageDialog(frame, "You have made your choices!");
+                }
+
+                frame.revalidate();
+                frame.repaint();
+            }
+        }
+    }
+
+    private void displayMessage(String filename) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            String line;
+            StringBuilder contentExceptFirstLine = new StringBuilder();
+            boolean isFirstLine = true;
+
+            while ((line = reader.readLine()) != null) {
+                if (isFirstLine) {
+                    isFirstLine = false;
+                } else {
+                    contentExceptFirstLine.append(line).append("\n");
+                }
+            }
+
+            reader.close();
+
+            JOptionPane.showMessageDialog(null, contentExceptFirstLine.toString(), "File Content (Except First Line)", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new DynamicButtonApp());
+    }
+}
+

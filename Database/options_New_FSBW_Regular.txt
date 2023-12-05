@@ -1,0 +1,5 @@
+Final
+CM: Snooze for 24 hours
+Note: If Snooze expires outside of business hours, set snooze to expire at 10 AM the following business day.
+
+EM: Snooze for 3 hours

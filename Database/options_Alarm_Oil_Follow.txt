@@ -1,0 +1,4 @@
+Final
+Snooze alarm until parts ETA
+After snoozing, acknowledge all oil fail alarms
+Note: If ETA is not available, snooze for 24 hours. If 24 hours ends outside of business hours, set snooze to last to 10 AM on the 1st business day after the 24 hour mark.

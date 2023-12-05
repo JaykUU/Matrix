@@ -1,0 +1,18 @@
+Final
+Checking Frequently Asked Questions - Snooze Process
+
+Q: How do I release the alarm in Alarm Management if the process is not to Snooze?
+A: Reset the alarm in Alarm Management. Alarm Management has write-back capability with the E2s meaning that when "Reset" is selected in Aalrm Management, it will also reset the alarm in the E2 so that it can alarm again if alarm parameters are met/exceeded.
+
+Q: How long should I Snooze when using HoneyBee to confirm a technician is onsite? 
+A: Set Snooze to expire 3 hours after the technicians Check-in time.
+
+Q: How do i Snooze one/some temperture zones in ta case with multiple zones for a technician onsiter or due to a repair waiting on parts if I do not have an active alarm?
+A: Leave a note in Salesforce, or on the entire case from the Proactive tab on Alarm Management if a Salesforce case has not yet been made, including the following:
+
+    Requestor/Reason
+    call Back # (if request is from a technician onsite)
+    WO# (if applicable)
+    Specific zone/zones needing to be Snoozed and how long the Snooze should last
+    Ex. "Upon temperature zone 1 alarming, please Snooze until 2pm store time per tech Jessie's request. Jessie: 123-456-7890. WO 9125864729"
+The next person to receive an active alarm for the zone(s) needing to be snoozed will see this note and should follow the Snooze direction provided.

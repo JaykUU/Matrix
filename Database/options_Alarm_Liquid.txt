@@ -1,0 +1,5 @@
+- -Case(s) are stocked, warming, and there is the potential for a temporary fix (there are no notes indicating the marerials needed or work quoted on a pending proposal are the only thing that will repair the issue)
+- -Case(s) are empty or there is no potential for a temporary fix (notes indicate materials needed or work quoted on a pending proposal are the only thing that will repair the issue)
+- -Stocked or Empty?
+Stocked
+Empty

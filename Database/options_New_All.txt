@@ -1,0 +1,8 @@
+- -What type of alarm?
+-h2Note: If you do not see your alarm listed, please submit feedback with alarm type and the store number you come across the alarm at.
+- -Select best option
+Demand Cooling Alarms
+VFD Compressor Alarms, VS Fan out Alarms, VS Inverter Fail Alarms, and VS Fault Alarms
+High Water Level Alarms
+Valve Alarms
+Discrete Spray and Flow Swtch Alarm

@@ -1,0 +1,9 @@
+Final
+New/Repeat Alarm (Store has not confirmed they requested service via email): Snooze for 3 business days.
+
+Repeat Alarm (Store has confirmed they requested service via email):
+Update obtained: Snooze alarm based on the update received. Ex Snooze until 10 am on the business day following the part/service ETA.
+No Update: Snooze for 24 hours.
+
+Store emailed to confirm they requested service: Snooze for 3 business days.
+Warning: If Snooze expires outside of business hours, set snooze to expire at 10 AM the following business day.

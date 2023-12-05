@@ -1,0 +1,7 @@
+- -If you receive another Oil Fail or related alarm while issue is waiting on materials, you will need to determine if service needs to be redispatched or if we only need to follow up with the vendor for ETA.
+-h2Note: Please refer to tech check out notes in Salesforce to help decide if we need to redispatch. Tech check out notes may provide insight into situations we are unable to outline here.
+- -Redispatch: If alarm is active and/or rack pressures are trending worse since tech checked out, or any temps are affected in cases that have product.
+- -Follow Up with Vendor for ETA: If temps and pressures remain brand.
+- -Redispatch or Follow Up?
+Redispatch As EM
+Follow Up with Vendor

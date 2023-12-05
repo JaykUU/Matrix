@@ -1,0 +1,9 @@
+Final
+Immediate EM: Snooze alarm for 3 hours
+Note: Snooze store if multiple case temperatures are impacted.
+
+AM EM Service - 6 p.m. through 6 a.m. Store Time: Snooze alarm for 3 hours
+Note: We need to monitor the issue every 3 hours overnight to ensure service does not need to be escalated.
+
+Am EM Service - Store closed and unable to reach a responder: Snooze until 1 hours before Store Flow Time
+Note: Snooze store if multiple case temperatures are impacted.
