@@ -14,6 +14,18 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
+/**
+ * Author: John Wells
+ * Ver 0.1
+ * This application will help team members go through a decision tree to decide how
+ * long they put cases in snooze for refrigeration assets in Alarm Management.
+ * It also has an option under the menu to be able to edit the Database files. 
+ * 
+ * The application uses JFrame to present the options to the user and the message at the end.
+ * This uses text documents as the Database. This folder is located one folder up from this
+ * file location.
+ */
+
 public class SnoozeMatrixEditApp {
     private JFrame frame;
     private JPanel panel;
@@ -22,37 +34,34 @@ public class SnoozeMatrixEditApp {
     private JButton saveButton;
     private JButton saveAsButton;
     private File currentFile;
-    //private GridBagConstraints position;
     private List<JButton> buttons;
     private List<Component> components;
-    //private int currentChoice = 1; // Track the current choice level
     private final String PATH = System.getProperty("user.dir");
     private String path = "";
-    //private String goBack = "";
     private String fileLocation = "";
     private final int TARGETREDRED = 204;
     private final int TARGETREDGREEN = 0;
     private final int TARGETREDBLUE = 0;
-    Color targetRed = new Color(TARGETREDRED, TARGETREDGREEN, TARGETREDBLUE);
+    Color targetRed = new Color(TARGETREDRED, TARGETREDGREEN, TARGETREDBLUE); //Target's red color
     private final int TARGETWHITERED = 255;
     private final int TARGETWHITEGREEN = 255;
     private final int TARGETWHITEBLUE = 255;
-    Color targetWhite = new Color(TARGETWHITERED, TARGETWHITEGREEN, TARGETWHITEBLUE);
+    Color targetWhite = new Color(TARGETWHITERED, TARGETWHITEGREEN, TARGETWHITEBLUE); //Target's white color
     private final int TARGETDARKGRAYRED = 51;
     private final int TARGETDARKGRAYGREEN = 51;
     private final int TARGETDARKGRAYBLUE = 51;
-    Color targetDarkGray = new Color(TARGETDARKGRAYRED, TARGETDARKGRAYGREEN, TARGETDARKGRAYBLUE);
+    Color targetDarkGray = new Color(TARGETDARKGRAYRED, TARGETDARKGRAYGREEN, TARGETDARKGRAYBLUE); //Target's dark gray color
     private final int TARGETGRAYRED = 128;
     private final int TARGETGRAYGREEN = 130;
     private final int TARGETGRAYBLUE = 133;
-    Color targetGray = new Color(TARGETGRAYRED, TARGETGRAYGREEN, TARGETGRAYBLUE);
+    Color targetGray = new Color(TARGETGRAYRED, TARGETGRAYGREEN, TARGETGRAYBLUE); //Target's gray color
     private final int TARGETLIGHTGRAYRED = 191;
     private final int TARGETLIGHTGRAYGREEN = 194;
     private final int TARGETLIGHTGRAYBLUE = 198;
-    Color targetLightGray = new Color(TARGETLIGHTGRAYRED, TARGETLIGHTGRAYGREEN, TARGETLIGHTGRAYBLUE);
+    Color targetLightGray = new Color(TARGETLIGHTGRAYRED, TARGETLIGHTGRAYGREEN, TARGETLIGHTGRAYBLUE); //Target's light gray
     
 
-    public SnoozeMatrixEditApp() {
+    public SnoozeMatrixEditApp() { // making the frame
         setUIFont(new FontUIResource(new Font("Helvetica", 0, 14)));
         frame = new JFrame("Snooze Matrix");
         
@@ -61,7 +70,7 @@ public class SnoozeMatrixEditApp {
 
         createMenuBar();
 
-        ImageIcon img = new ImageIcon(String.format("%s\\lib\\Image\\bullseye.png", PATH));
+        ImageIcon img = new ImageIcon(String.format("%s\\lib\\Image\\bullseye.png", PATH)); //Adding the Target bullseye at the top of the page.
         frame.setIconImage(img.getImage());
 
         panel = new JPanel();
@@ -75,7 +84,7 @@ public class SnoozeMatrixEditApp {
 
         //position = new GridBagConstraints();
 
-        fileLocation = String.format("%s\\Database\\initial_buttons.txt", PATH);
+        fileLocation = String.format("%s\\Database\\initial_buttons.txt", PATH); // Location of the first page.
         loadButtonsFromFile(fileLocation); // Load initial buttons
         addVerticalSpacing(10);
 
@@ -85,7 +94,7 @@ public class SnoozeMatrixEditApp {
         frame.setVisible(true);
     }
 
-    private void createMenuBar() {
+    private void createMenuBar() { // Creating menu bar at top of page.
         JMenuBar menuBar = new JMenuBar();
 
         JMenu filMenu = new JMenu("File");
@@ -123,7 +132,7 @@ public class SnoozeMatrixEditApp {
         frame.setJMenuBar(menuBar);
     }
 
-    public static void setUIFont(FontUIResource f) {
+    public static void setUIFont(FontUIResource f) { // Creating default font
         Enumeration keys = UIManager.getDefaults().keys();
         while (keys.hasMoreElements()) {
             Object key = keys.nextElement();
@@ -136,7 +145,7 @@ public class SnoozeMatrixEditApp {
         }
     }
 
-    private void editPage() {
+    private void editPage() { // The ability to edit the database documents. 
             frame = new JFrame("Snooze Matrix Editor");
             frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             frame.setSize(600, 400);
@@ -229,40 +238,33 @@ public class SnoozeMatrixEditApp {
             }
         }
 
-    private String goBackFile() {
+    private String goBackFile() { // to build the file location for going back.
         String[] parts = fileLocation.split("_");
         String[] result = new String[parts.length];
 
         for (int i = 0; i < parts.length; i++) {
             result[i] = parts[i].replaceAll("\\.txt$", "");
         }
-        /**
-        for (String part : result) {
-            System.out.println(part);
-        }
-        */
+
         String newPath = result[0];
         for (int i = 1; i < result.length - 1; i++) {
             newPath = newPath + "_" + result[i];
             path = path + "_" + result[i];
         }
         newPath = newPath + ".txt";
-        //System.out.printf("newPath: %s\n", newPath);
         return newPath;
     }
 
-    private void goBack() {
+    private void goBack() { // From menu bar to go back on page.
         panel.removeAll();
         addVerticalSpacing(10);
         fileLocation = goBackFile();
-        //loadButtonsFromFile(String.format("%s\\Database\\options%s.txt", PATH, goBack));
         loadButtonsFromFile(fileLocation);
-        //path = goBack;
         frame.revalidate();
         frame.repaint();
     }
 
-    private void startOver() {
+    private void startOver() { //  From menu bar to start over from first page.
         path = "";
         panel.removeAll();
         addVerticalSpacing(10);
@@ -278,34 +280,28 @@ public class SnoozeMatrixEditApp {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (line.equals("Final")) {
+                    // if the first line is Final it will create and display the message on the text file.
                     displayMessage(filename);
-                    //loadButtonsFromFile(String.format("%s\\Database\\initial_buttons.txt", PATH));
-                    //path = "";
-                    //System.out.print(String.format("%s\\Database\\options%s.txt", PATH, goBack));
                     fileLocation = goBackFile();
-                    //path = goBack;
                     panel.removeAll();
-                    //loadButtonsFromFile(String.format("%s\\Database\\options%s.txt", PATH, goBack));
                     loadButtonsFromFile(fileLocation);
                     frame.revalidate();
                     frame.repaint();
                     break;
                 }
                 else if (line.startsWith("- -")) {
-                    // Process as text with a note
+                    // Process as text with a note from text file
                     JTextArea textArea = new JTextArea(4, 40);
                     textArea.setWrapStyleWord(true);
                     textArea.setLineWrap(true);
                     textArea.setText(line.substring(3).trim());
                     textArea.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    //Font font = new Font("Segoe Script", Font.BOLD, 20);
-                    //textArea.setFont(font);
                     textArea.setEditable(false);
                     components.add(textArea);
                     panel.add(textArea);
                 }
                 else if (line.startsWith("-h1")) {
-                    // Process as text with a note
+                    // Process as text with a note from the text file and makes it red with font bold and size 20.
                     JTextArea textArea = new JTextArea(4, 40);
                     textArea.setWrapStyleWord(true);
                     textArea.setLineWrap(true);
@@ -319,7 +315,7 @@ public class SnoozeMatrixEditApp {
                     panel.add(textArea);
                 }
                 else if (line.startsWith("-h2")) {
-                    // Process as text with a note
+                    // Process as text with a note rom the text file and makes it red with font size 12.
                     JTextArea textArea = new JTextArea(4, 40);
                     textArea.setWrapStyleWord(true);
                     textArea.setLineWrap(true);
@@ -349,9 +345,6 @@ public class SnoozeMatrixEditApp {
                     JButton button = new JButton(line);
                     button.setAlignmentX(Component.LEFT_ALIGNMENT);
                     button.addActionListener(new ButtonClickListener());
-                    //button.setBackground(targetGray);
-                    //button.setForeground(targetRed);
-                    //button.setBorder(BorderFactory.createEmptyBorder(0, 10, 20, 0));
                     buttons.add(button);
 
                     Component verticalStrut = Box.createRigidArea(new Dimension(0, 10));
@@ -364,30 +357,6 @@ public class SnoozeMatrixEditApp {
             e.printStackTrace();
             startOver();
         }
-        /**
-        System.out.printf("in load path %s\n", path);
-        System.out.printf("in load goback %s\n", goBack);
-        System.out.printf("filelocation: %s\n", fileLocation);
-        JButton goBackButton = new JButton("Go Back");
-        goBackButton.setAlignmentX(Component.RIGHT_ALIGNMENT);
-        goBackButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                goBack();
-            }
-        });
-
-        JButton StartOverButton = new JButton("Start Over");
-        StartOverButton.setAlignmentX(Component.RIGHT_ALIGNMENT);
-        StartOverButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                startOver();
-            }
-        });
-        panel.add(goBackButton);
-        panel.add(StartOverButton);
-        */
     }
 
     // Method to add bertical spacing between buttons
@@ -402,13 +371,8 @@ public class SnoozeMatrixEditApp {
         public void actionPerformed(ActionEvent e) {
             JButton sourceButton = (JButton) e.getSource();
             String[] arrOfStrs = sourceButton.getText().split(" ");
-            //goBack = path;
             path = path + "_" + arrOfStrs[0];
-            //String optionFilename = PATH + "\\Database\\options" + path + ".txt";
             fileLocation = PATH + "\\Database\\options" + path + ".txt";
-            //System.out.printf("path %s\n", path);
-            //System.out.printf("goback %s\n", goBack);
-            //System.out.printf("filelocation: %s\n", fileLocation);
             panel.removeAll(); // Remove existing buttons
 
             loadButtonsFromFile(fileLocation); // Load options buttons
@@ -440,7 +404,7 @@ public class SnoozeMatrixEditApp {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { // Main method
         SwingUtilities.invokeLater(() -> new SnoozeMatrixEditApp());
     }
 }
